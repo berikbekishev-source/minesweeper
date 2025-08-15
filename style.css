@@ -35,8 +35,14 @@ h1 {
 }
 
 h1::before {
-    content: "🚩";
-    font-size: 0.9em;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url('sprites/icon_flag.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .game-info {
@@ -141,20 +147,38 @@ h1::before {
 }
 
 .mine-counter::before {
-    content: "💣";
-    font-size: 13px;
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url('sprites/icon_bomb.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     flex-shrink: 0;
 }
 
 .timer::before {
-    content: "⏱️";
-    font-size: 13px;
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url('sprites/icon_timer.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     flex-shrink: 0;
 }
 
 .best-time::before {
-    content: "🏆";
-    font-size: 13px;
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url('sprites/icon_trophy.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     flex-shrink: 0;
 }
 
@@ -163,7 +187,7 @@ h1::before {
     grid-template-columns: repeat(16, 30px);
     grid-template-rows: repeat(16, 30px);
     gap: 1px;
-    background-color: #d0d0d0;
+    background: #d0d0d0 url('sprites/board_bg.svg') repeat;
     border: 3px solid #b0b0b0;
     border-radius: 6px;
     margin: 0 auto;
@@ -174,6 +198,10 @@ h1::before {
     width: 30px;
     height: 30px;
     background-color: #e0e0e0;
+    background-image: url('sprites/cell_closed.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border: 1px solid #b0b0b0;
     display: flex;
     justify-content: center;
@@ -187,33 +215,36 @@ h1::before {
 }
 
 .cell:hover {
-    background-color: #f0f0f0;
+    filter: brightness(1.05);
     transform: scale(1.02);
 }
 
 .cell.opened {
-    background-color: white;
+    background-color: #ffffff;
+    background-image: url('sprites/cell_open.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border: 1px solid #d0d0d0;
 }
 
 .cell.mine {
     background-color: #ff3b30;
-    color: white;
+    background-image: url('sprites/cell_mine.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .cell.flagged {
     background-color: #fff3cd;
+    background-image: url('sprites/cell_flagged.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.cell.flagged::before {
-    content: "🚩";
-    font-size: 16px;
-}
-
-.cell.mine::before {
-    content: "💣";
-    font-size: 16px;
-}
+/* Icons are now baked into tile sprites; no pseudo-elements needed for cells */
 
 /* Цвета цифр как в классическом сапёре */
 .cell.opened[data-mines="1"] { color: #007AFF; }
