@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сапёр</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Сапёр</h1>
+        
+        <div class="game-info">
+            <div class="instructions">
+                <p>ЛКМ — открыть клетку, ПКМ — поставить флаг, Двойной клик — открыть соседние клетки</p>
+            </div>
+            
+            <div class="difficulty-selector">
+                <span>Сложность:</span>
+                <button class="difficulty-btn active" data-difficulty="beginner">Beginner</button>
+                <button class="difficulty-btn" data-difficulty="intermediate">Intermediate</button>
+                <button class="difficulty-btn" data-difficulty="expert">Expert</button>
+            </div>
+            
+            <div class="controls">
+                <button id="new-game-btn">Новая игра</button>
+                <div class="game-stats">
+                    <div class="mine-counter">
+                        <span>Мин осталось: </span>
+                        <span id="mines-left">40</span>
+                    </div>
+                    <div class="timer">
+                        <span>Время: </span>
+                        <span id="timer">0</span>
+                    </div>
+                    <div class="best-time">
+                        <span>Лучшее: </span>
+                        <span id="best-time">-</span>
+                    </div>
+                    <div class="current-difficulty">
+                        <span>Сложность: </span>
+                        <span id="current-difficulty">Intermediate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-board" id="game-board">
+            <!-- Игровое поле будет создано в JavaScript -->
+        </div>
+        
+        <div class="game-message" id="game-message"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
